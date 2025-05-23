@@ -4,6 +4,10 @@ import { login as authLogin } from "../store/authSlice";
 import { useDispatch } from "react-redux";
 import authService from "../appwrite/auth";
 import { useForm } from "react-hook-form";
+import Logo from "./Logo"
+import Input from "./Input"
+import Button from "./Button"
+
 
 function Login() {
   const navigate = useNavigate();
@@ -15,9 +19,9 @@ function Login() {
     try {
       const session = await authService.login(data);
       if (session) {
-        const userData = await authService.getUser();
+        const userData = await authService.getCurrentUser();
         if (userData) {
-          dispatch(authLogin(userData));
+          dispatch(authLogin({userData}));
           navigate("/");
         }
       }

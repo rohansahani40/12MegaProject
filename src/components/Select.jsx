@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useId } from 'react'
 
 const Select = ({
     options,
@@ -6,7 +6,7 @@ const Select = ({
     className,
     ...props
 },ref) => {
-    const id= useId()
+    const id = useId()
   return (
     <div className='w-full'>
         {label && <label> </label>}

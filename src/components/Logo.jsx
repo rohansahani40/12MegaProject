@@ -1,12 +1,13 @@
 import React from 'react'
 
-const logo = ({width='100px'}) => {
+function Logo({width = '100px'}) {
   return (
-    <div>
-      logo
+    <div className="flex items-center">
+      <span className="text-2xl font-bold text-blue-600" style={{width}}>
+        BlogApp
+      </span>
     </div>
   )
 }
 
-export default logo
-
+export default Logo
